@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseUser user;
     ProgressBar progressBar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         user = auth.getCurrentUser();
         Button btnHome = findViewById(R.id.btn_home);
         progressBar = findViewById(R.id.progressBar);
+        Button btnMap = findViewById(R.id.btn_map);
 
         if (user == null){
             Intent intent = new Intent(getApplicationContext(), Login.class);
@@ -40,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
         } else {
             textView.setText(user.getEmail());
         }
+        btnMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Map.class);
+                startActivity(intent);
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
