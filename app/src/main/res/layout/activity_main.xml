@@ -34,6 +34,17 @@
         android:textColor="@android:color/white"
         />
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/menu_bar"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="411dp"
+        android:layout_marginBottom="683dp"
+        android:visibility="gone" />
+
     <!-- Menu Bar -->
     <LinearLayout
         android:id="@+id/menu_bar"
@@ -123,13 +134,6 @@
             app:iconTint="#000000" />
 
     </LinearLayout>
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:visibility="gone"/>
 
 
     <TextView
