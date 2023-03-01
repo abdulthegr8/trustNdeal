@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+
+    <!-- Search Bar -->
+    <EditText
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:hint="@string/search_for_items"
+        android:inputType="text"
+        android:maxLines="1"
+        android:padding="18dp"
+        android:textSize="16sp"
+        android:drawableEnd="@drawable/ic_search"
+        android:autofillHints="" />
+
+
+    <!-- List of Items -->
+    <ListView
+        android:id="@+id/item_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_bar"
+        android:padding="16dp"
+        android:textColor="@android:color/white"
+        />
+
+    <!-- Menu Bar -->
+    <LinearLayout
+        android:id="@+id/menu_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_home"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/home"
+            android:textColor="@color/black"
+            android:textSize="11.5sp"
+            android:textStyle="bold"
+            app:icon="@drawable/ic_home"
+            app:iconTint="#000000" />
+
+        <Button
+            android:id="@+id/btn_post"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/post"
+            android:textColor="@color/black"
+            android:textSize="11.5sp"
+            android:textStyle="bold"
+            app:icon="@drawable/ic_add"
+            app:iconTint="#000000" />
+
+        <Button
+            android:id="@+id/btn_profile"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/profile"
+            android:textColor="@color/black"
+            android:textSize="11.5sp"
+            android:textStyle="bold"
+            app:icon="@drawable/ic_account"
+            app:iconTint="#000000" />
+
+        <Button
+            android:id="@+id/btn_map"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/map"
+            android:textColor="@color/black"
+            android:textSize="11.5sp"
+            android:textStyle="bold"
+            app:icon="@drawable/ic_map"
+            app:iconTint="#000000"
+            app:iconTintMode="src_atop" />
+
+        <Button
+            android:id="@+id/btn_cart"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cart"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:icon="@drawable/ic_shopping_cart"
+            app:iconTint="#000000" />
+
+        <Button
+            android:id="@+id/logout"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/logout"
+            android:textColor="@color/black"
+            android:textSize="11.2sp"
+            android:textStyle="bold"
+            app:icon="@drawable/ic_logout"
+            app:iconTint="#000000" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:visibility="gone"/>
+
+
+    <TextView
+        android:id="@+id/user_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email" />
+
+
+</RelativeLayout>
