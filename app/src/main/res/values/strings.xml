@@ -17,4 +17,7 @@
     <string name="map">Map</string>
     <string name="cart">Cart</string>
     <string name="map_view_content_description">Map view showing nearby locations</string>
+    <string name="google_maps_api_key">AIzaSyADjUVGV7TcXp7VEhATo7Q15C6fn8KkyUM</string>
+
+
 </resources>
