@@ -18,6 +18,8 @@
     <string name="cart">Cart</string>
     <string name="map_view_content_description">Map view showing nearby locations</string>
     <string name="google_maps_api_key">AIzaSyADjUVGV7TcXp7VEhATo7Q15C6fn8KkyUM</string>
+    <string name="rating_bar_description">Rate this user from 1 to 5 stars</string>
+
 
 
 </resources>

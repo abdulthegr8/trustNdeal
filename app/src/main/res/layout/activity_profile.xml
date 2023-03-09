@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- User Image -->
+    <ImageView
+        android:id="@+id/user_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rounded_corners"
+        android:src="@drawable/default_user_image" />
+
+    <!-- Username -->
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_image"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="Username"/>
+
+    <!-- Rating -->
+    <RatingBar
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/username"
+        android:layout_centerHorizontal="true"
+        android:numStars="5"
+        android:rating="4.0"
+        android:stepSize="0.5"
+        android:contentDescription="@string/rating_bar_description"/>
+    <LinearLayout
+        android:id="@+id/menu_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_home"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/home"
+            android:textColor="@color/black"
+            android:textSize="11.5sp"
+            android:textStyle="bold"
+            app:icon="@drawable/ic_home"
+            app:iconTint="#000000" />
+
+        <Button
+            android:id="@+id/btn_post"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/post"
+            android:textColor="@color/black"
+            android:textSize="11.5sp"
+            android:textStyle="bold"
+            app:icon="@drawable/ic_add"
+            app:iconTint="#000000" />
+
+        <Button
+            android:id="@+id/btn_profile"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/profile"
+            android:textColor="@color/black"
+            android:textSize="11.5sp"
+            android:textStyle="bold"
+            app:icon="@drawable/ic_account"
+            app:iconTint="#000000" />
+
+        <Button
+            android:id="@+id/btn_map"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/map"
+            android:textColor="@color/black"
+            android:textSize="11.5sp"
+            android:textStyle="bold"
+            app:icon="@drawable/ic_map"
+            app:iconTint="#000000"
+            app:iconTintMode="src_atop" />
+
+        <Button
+            android:id="@+id/btn_cart"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cart"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:icon="@drawable/ic_shopping_cart"
+            app:iconTint="#000000" />
+
+        <Button
+            android:id="@+id/logout"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/logout"
+            android:textColor="@color/black"
+            android:textSize="11.2sp"
+            android:textStyle="bold"
+            app:icon="@drawable/ic_logout"
+            app:iconTint="#000000" />
+
+    </LinearLayout>
+
+</RelativeLayout>
+

@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button btnProfile = findViewById(R.id.btn_profile);
         auth = FirebaseAuth.getInstance();
         button = findViewById(R.id.logout);
         textView = findViewById(R.id.user_details);
@@ -42,32 +43,29 @@ public class MainActivity extends AppCompatActivity {
         } else {
             textView.setText(user.getEmail());
         }
-        btnMap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Map.class);
-                startActivity(intent);
-            }
+
+        btnMap.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), Map.class);
+            startActivity(intent);
         });
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(getApplicationContext(), Login.class);
-                startActivity(intent);
-                finish();
-            }
+        button.setOnClickListener(view -> {
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(getApplicationContext(), Login.class);
+            startActivity(intent);
+            finish();
         });
 
-        btnHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                progressBar.setVisibility(View.VISIBLE);
-                EditText searchBar = findViewById(R.id.search_bar);
-                searchBar.setText("");
-                recreate();
-            }
+        btnProfile.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, Profile.class);
+            startActivity(intent);
+        });
+
+        btnHome.setOnClickListener(view -> {
+            progressBar.setVisibility(View.VISIBLE);
+            EditText searchBar = findViewById(R.id.search_bar);
+            searchBar.setText("");
+            recreate();
         });
 
     }
