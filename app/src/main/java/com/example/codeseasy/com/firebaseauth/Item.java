@@ -1,10 +1,11 @@
 package com.example.codeseasy.com.firebaseauth;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Item {
+public class Item implements Serializable {
     private String itemId;
-    private String name;
+    private String title;
     private String description;
     private String category;
     private double price;
@@ -14,7 +15,7 @@ public class Item {
 
     public Item(String itemId, String title, String description, double price, List<String> imageUrls, String username, String userProfileImageUrl) {
         this.itemId = itemId;
-        this.name = title;
+        this.title = title;
         this.description = description;
         this.price = price;
         this.imageUrls = imageUrls;
@@ -27,7 +28,7 @@ public class Item {
 
 
     public String getTitle() {
-        return name;
+        return title;
     }
 
     public String getDescription() {

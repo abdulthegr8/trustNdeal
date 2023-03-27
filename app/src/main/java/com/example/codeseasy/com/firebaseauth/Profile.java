@@ -46,6 +46,7 @@ public class Profile extends AppCompatActivity {
     private String userId;
     private String usernameStr;
     private String imageUrl;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,7 @@ public class Profile extends AppCompatActivity {
         currentUser = mAuth.getCurrentUser();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
+        textView = findViewById(R.id.user_details);
         userImage = findViewById(R.id.user_image);
         username = findViewById(R.id.username);
         ratingBar = findViewById(R.id.rating);
@@ -63,6 +65,8 @@ public class Profile extends AppCompatActivity {
         Button btnHome = findViewById(R.id.btn_home);
         Button btnProfile = findViewById(R.id.btn_profile);
         Button logout = findViewById(R.id.logout);
+        Button btnPost = findViewById(R.id.btn_post);
+
 
         logout.setOnClickListener(view -> {
             FirebaseAuth.getInstance().signOut();
@@ -73,6 +77,11 @@ public class Profile extends AppCompatActivity {
 
         btnMap.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(), Map.class);
+            startActivity(intent);
+        });
+
+        btnPost.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), Post.class);
             startActivity(intent);
         });
 

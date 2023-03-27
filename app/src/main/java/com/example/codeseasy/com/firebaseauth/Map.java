@@ -1,11 +1,16 @@
 package com.example.codeseasy.com.firebaseauth;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.Manifest;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -36,17 +41,61 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private GoogleMap map;
 
+    private void showInstructionsDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Important Notice");
+        builder.setMessage("Please read the instructions before meeting the seller/buyer.");
+        builder.setPositiveButton("Read", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // Open instructions window
+                openInstructionsActivity();
+            }
+        });
+        builder.setNegativeButton("Skip", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // Do nothing, continue with map display
+            }
+        });
+        builder.setNeutralButton("Don't show again", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // Mark instructions as read and don't show again
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(Map.this);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("show_instructions", false);
+                editor.apply();
+            }
+        });
+        builder.show();
+    }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean showInstructions = sharedPreferences.getBoolean("show_instructions", true);
+
+        if (showInstructions) {
+            showInstructionsDialog();
+        }
+
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map_fragment);
         mapFragment.getMapAsync(this);
     }
+    private void openInstructionsActivity() {
+        Intent intent = new Intent(this, InstructionsActivity.class);
+        startActivity(intent);
+    }
+
 
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
@@ -82,7 +131,7 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
                                 String placeType = "cafe|department_store|shopping_mall|police";
                                 String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json" +
                                         "?location=" + location.getLatitude() + "," + location.getLongitude() +
-                                        "&radius=5000" +
+                                        "&radius=8000" +
                                         "&type=" + placeType +
                                         "&key=" + getString(R.string.google_maps_api_key);
 

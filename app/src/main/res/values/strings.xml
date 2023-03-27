@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Firebase Auth</string>
+    <string name="app_name">Trust N Deal</string>
     <string name="login">Login</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
@@ -19,6 +19,10 @@
     <string name="map_view_content_description">Map view showing nearby locations</string>
     <string name="google_maps_api_key">AIzaSyADjUVGV7TcXp7VEhATo7Q15C6fn8KkyUM</string>
     <string name="rating_bar_description">Rate this user from 1 to 5 stars</string>
+    <string name="instructions_text"> run</string>
+    <string name="skip_text">Skip</string>
+    <string name="read_text">Read</string>
+
 
 
 </resources>

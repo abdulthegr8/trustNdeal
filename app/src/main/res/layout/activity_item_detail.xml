@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#80000000"
+    android:padding="16dp">
+
+    <RelativeLayout
+        android:id="@+id/item_detail_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#737373"
+        android:elevation="8dp"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/item_detail_image"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="16dp"/>
+
+        <ImageView
+            android:id="@+id/btn_close"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/baseline_close_24" />
+
+        <TextView
+            android:id="@+id/item_detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_below="@id/item_detail_image"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="16dp"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/item_detail_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_below="@id/item_detail_title"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/item_detail_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            android:layout_below="@id/item_detail_description"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="16dp"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:id="@+id/btn_add_to_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add to Cart"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="16dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+

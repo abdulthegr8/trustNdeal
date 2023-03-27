@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -23,6 +24,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import android.view.KeyEvent;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,6 +51,25 @@ public class MainActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         Button btnMap = findViewById(R.id.btn_map);
         Button btnPost = findViewById(R.id.btn_post);
+        EditText searchBar = findViewById(R.id.search_bar);
+        List<Item> itemList = new ArrayList<>();
+        ItemAdapter itemAdapter = new ItemAdapter(MainActivity.this, itemList);
+        ListView listView = findViewById(R.id.item_list);
+        listView.setAdapter(itemAdapter);
+
+
+        searchBar.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    String searchText = searchBar.getText().toString().trim();
+                    itemAdapter.getFilter().filter(searchText);
+                    return true;
+                }
+                return false;
+            }
+        });
 
         if (user == null){
             Intent intent = new Intent(getApplicationContext(), Login.class);
@@ -80,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
 
         btnHome.setOnClickListener(view -> {
             progressBar.setVisibility(View.VISIBLE);
-            EditText searchBar = findViewById(R.id.search_bar);
             searchBar.setText("");
             recreate();
         });
@@ -108,6 +130,16 @@ public class MainActivity extends AppCompatActivity {
                 ListView listView = findViewById(R.id.item_list);
                 ItemAdapter itemAdapter = new ItemAdapter(MainActivity.this, itemList);
                 listView.setAdapter(itemAdapter);
+
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Item selectedItem = itemList.get(position);
+                        Intent intent = new Intent(MainActivity.this, ItemDetailActivity.class);
+                        intent.putExtra("item", selectedItem);
+                        startActivity(intent);
+                    }
+                });
             }
 
             @Override
