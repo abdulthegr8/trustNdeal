@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Trust N Deal</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="click_to_login">Click to login</string>
+    <string name="click_to_register">Click to register</string>
+    <string name="logout">Logout</string>
+    <string name="register_now">Register Now</string>
+    <string name="logo">Logo</string>
+    <string name="login_now">Login now</string>
+    <string name="search_for_items">Search for items</string>
+    <string name="home">Home</string>
+    <string name="post">Post</string>
+    <string name="profile">Profile</string>
+    <string name="map">Map</string>
+    <string name="cart">Cart</string>
+    <string name="map_view_content_description">Map view showing nearby locations</string>
+    <string name="google_maps_api_key">AIzaSyADjUVGV7TcXp7VEhATo7Q15C6fn8KkyUM</string>
+    <string name="rating_bar_description">Rate this user from 1 to 5 stars</string>
+    <string name="instructions_text"> run</string>
+    <string name="skip_text">Skip</string>
+    <string name="read_text">Read</string>
+
+
+
+</resources>

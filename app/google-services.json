@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "710428009857",
+    "project_id": "authtnd",
+    "storage_bucket": "authtnd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:710428009857:android:f16c511675b353efcf7480",
+        "android_client_info": {
+          "package_name": "com.example.codeseasy.com.firebaseauth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "710428009857-l3umt01dpjiegmss1nta81vun9gd6uk8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYv-3uHoJlHHk4_EUsP-0cuJzUEEpB5Wo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "710428009857-l3umt01dpjiegmss1nta81vun9gd6uk8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
