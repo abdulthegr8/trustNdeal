@@ -40,14 +40,5 @@ To get started with TrustNDeal development, follow these steps:
 
 ## Contributing
 
-We welcome contributions from the community to help improve and evolve TrustNDeal. If you would like to contribute, please follow our [Contribution Guidelines](CONTRIBUTING.md).
+We welcome contributions from the community to help improve and evolve TrustNDeal. If you would like to contribute, please go ahead.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute it according to the terms of the license.
-
-## Contact
-
-If you have any questions or need assistance, please reach out to our development team at support@trustndeal.com.
-
-Thank you for your interest in TrustNDeal. We look forward to building a safer and more reliable local marketplace with your help!
